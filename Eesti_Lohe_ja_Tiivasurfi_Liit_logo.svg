@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="500mm" height="500mm">
+  <!-- 
+    Eesti Lohe- ja Tiivasurfi Liit Logo
+    Vector format for print and web.
+    Colors:
+    Blue: #0047AB (Pantone 286 C approx)
+    Black: #000000
+    Fonts: Arial / Helvetica (converted to system font references)
+  -->
+  <defs>
+    <style>
+      .text { font-family: 'Arial', 'Helvetica', sans-serif; font-weight: bold; }
+    </style>
+    <!-- Text Curve Path -->
+    <path id="textCurve" d="M 50,280 A 200,200 0 1,1 450,280" fill="none" />
+  </defs>
+
+  <!-- Circular Text -->
+  <text class="text" font-size="34" fill="#000000" letter-spacing="1.5">
+    <textPath href="#textCurve" startOffset="50%" text-anchor="middle">
+      EESTI LOHE- JA TIIVASURFI LIIT
+    </textPath>
+  </text>
+
+  <!-- Central Graphic Symbol -->
+  <g transform="translate(250, 260) scale(1.1)">
+     <!-- Blue Shape (Left Crescent) -->
+     <path d="M -15,-90
+              A 95,95 0 0,0 -15,90
+              Q -50,0 -15,-90
+              Z"
+           fill="#0047AB" />
+
+     <!-- Black Shape (Right Fin) -->
+     <path d="M 15,-80
+              Q 100,-20 80,90
+              Q 50,50 15,90
+              Q 40,0 15,-80
+              Z"
+           fill="#000000" />
+  </g>
+
+  <!-- Bottom Text -->
+  <text x="250" y="440" text-anchor="middle" class="text" font-size="48" letter-spacing="3" fill="#000000">
+    ELTSL
+  </text>
+</svg>
