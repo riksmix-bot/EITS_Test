@@ -1,5 +1,5 @@
 ---
-description: 
+description: Comprehensive security best practices covering authentication, authorization, input validation, cryptography, and web security headers
 globs: 
 alwaysApply: true
 ---
