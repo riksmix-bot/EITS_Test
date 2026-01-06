@@ -1,0 +1,201 @@
+---
+description: EITS (Eesti infosüsteemide turvameetmete süsteem) turvameetmete ülevaade
+globs: 
+alwaysApply: false
+---
+# EITS Turvameetmete Rakendamine
+
+## Kontekst
+
+- Rakenda neid reegleid kui töötad Eesti avaliku sektori infosüsteemidega
+- EITS põhineb rahvusvahelistel standarditel (ISO 27001, BSI IT-Grundschutz)
+- Turvaklassid määravad nõutavate meetmete ulatuse
+
+## Turvaklassifikatsiooni määramine
+
+### Konfidentsiaalsus (K)
+
+| Aste | Kriteerium | Näited |
+|:-----|:-----------|:-------|
+| K1 | Avalik teave või piiratud mõjuga leke | Avalikud veebilehed, üldinfo |
+| K2 | Asutusesisene, leke põhjustab olulist kahju | Sisedokumendid, äriplaanid |
+| K3 | Salastatud, leke põhjustab tõsist kahju | Isikuandmed, riigisaladused |
+
+### Terviklus (T)
+
+| Aste | Kriteerium | Näited |
+|:-----|:-----------|:-------|
+| T1 | Muutmine põhjustab piiratud kahju | Uudisvoog, statistika |
+| T2 | Muutmine põhjustab olulist kahju | Finantsandmed, lepingud |
+| T3 | Muutmine põhjustab tõsist kahju | Meditsiiniandmed, õigusaktid |
+
+### Käideldavus (S)
+
+| Aste | Kriteerium | RTO/RPO |
+|:-----|:-----------|:--------|
+| S1 | Katkestus talutav päevadeks | RTO: 72h, RPO: 24h |
+| S2 | Katkestus talutav tundideks | RTO: 8h, RPO: 4h |
+| S3 | Katkestus talutav minutiteks | RTO: 1h, RPO: 15min |
+
+## Nõuded turbeastme järgi
+
+### Aste 1 - Põhimeetmed
+
+```yaml
+Autentimine:
+  - Paroolipoliitika (min 8 tähemärki)
+  - Kasutajakontode haldus
+  - Sessioonide aegumne
+
+Ligipääs:
+  - Rollipõhine ligipääsukontroll (RBAC)
+  - Ligipääsu logimine
+  - Vaikimisi keelav poliitika
+
+Logimine:
+  - Sisselogimiste logimine
+  - Vigade logimine
+  - Logide säilitamine (min 1 aasta)
+
+Varundamine:
+  - Regulaarne varundamine (min 1x nädalas)
+  - Varukoopiate testimine (min 1x aastas)
+  - Eraldiseisev varukoopiate hoidla
+```
+
+### Aste 2 - Täiendatud meetmed
+
+```yaml
+Autentimine:
+  - Mitmeastmeline autentimine (MFA) privilegeeritud kasutajatele
+  - Konto lukustamine pärast 5 ebaõnnestunud katset
+  - Paroolide ajaloo kontroll (min 5 eelmist)
+
+Ligipääs:
+  - Atribuudipõhine ligipääsukontroll (ABAC)
+  - Regulaarne õiguste ülevaatus (min kord kvartalis)
+  - Privilegeeritud ligipääsu haldus (PAM)
+
+Monitooring:
+  - Reaalajas turvasündmuste monitooring
+  - Anomaaliate tuvastamine
+  - Automaatsed häired
+
+Haavatavuste haldus:
+  - Regulaarne haavatavuste skaneerimine (min kord kuus)
+  - Paikade paigaldamine 14 päeva jooksul
+  - Läbistustestimine (min kord aastas)
+```
+
+### Aste 3 - Kõrgendatud meetmed
+
+```yaml
+Autentimine:
+  - MFA kõigile kasutajatele
+  - Riistvaralised autentimistokenid
+  - Biomeetria kõrge turvatarbega aladel
+
+Ligipääs:
+  - Zero Trust arhitektuur
+  - Pidev ligipääsu valideerimine
+  - Just-in-time ligipääs
+
+Monitooring:
+  - 24/7 turvaoperatsioonide keskus (SOC)
+  - SIEM lahendus
+  - Automaatne reageerimine (SOAR)
+
+Krüptograafia:
+  - Andmete krüpteerimine rahus ja liikumisel
+  - Riistvaraline võtmehaldus (HSM)
+  - Regulaarne krüptoanalüüs
+```
+
+## Rakenduse turvanõuded
+
+### Sisendi valideerimine (RAK.2)
+
+```java
+// KOHUSTUSLIK: Valideeri kõik sisendid
+@Valid
+public ResponseEntity<Result> processData(@Valid @RequestBody DataRequest request) {
+    // Äriloogika ainult valideeritud andmetega
+}
+
+// KOHUSTUSLIK: Kasuta parameetriseeritud päringuid
+public List<User> findByName(String name) {
+    return dsl.selectFrom(USERS)
+        .where(USERS.NAME.eq(name))  // jOOQ parameetriseerib automaatselt
+        .fetch();
+}
+```
+
+### Autentimine ja autoriseerimine (RAK.3, RAK.4)
+
+```java
+// KOHUSTUSLIK: Kasuta Spring Security annotatsioone
+@PreAuthorize("hasRole('ADMIN') or @accessChecker.canAccess(#id)")
+public Resource getResource(Long id) {
+    return resourceRepository.findById(id);
+}
+
+// KOHUSTUSLIK: Kontrolli ressursi omanikku (IDOR kaitse)
+public Document getDocument(Long documentId) {
+    Document doc = documentRepository.findById(documentId);
+    if (!doc.getOwnerId().equals(getCurrentUserId())) {
+        throw new AccessDeniedException("Access denied");
+    }
+    return doc;
+}
+```
+
+### Sessioonihaldus (RAK.5)
+
+```java
+// KOHUSTUSLIK: Sessioonide turvaseaded
+@Bean
+public SecurityFilterChain filterChain(HttpSecurity http) {
+    http.sessionManagement(session -> session
+        .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+        .maximumSessions(1)
+        .sessionFixation().migrateSession()
+    );
+    return http.build();
+}
+```
+
+### Logimine (SYS.4)
+
+```java
+// KOHUSTUSLIK: Logi kõik turvasündmused
+public void authenticate(String username) {
+    try {
+        // Autentimisloogika
+        AuditLogger.logLoginSuccess(username);
+    } catch (AuthenticationException e) {
+        AuditLogger.logLoginFailure(username, e.getMessage());
+        throw e;
+    }
+}
+```
+
+## Kriitilised reeglid
+
+- **ALATI** valideeri sisendeid serveri poolel
+- **ALATI** kasuta parameetriseeritud päringuid
+- **ALATI** kontrolli ligipääsuõigusi igal päringul
+- **ALATI** logi turvasündmused
+- **MITTE KUNAGI** salvesta paroole selge tekstina
+- **MITTE KUNAGI** eksponneeri detailseid veateateid kasutajale
+- **MITTE KUNAGI** usalda kliendipoolset valideerimist
+- **MITTE KUNAGI** logi tundlikke andmeid (paroolid, kaardnumbrid, isikukoodid)
+
+## Vastavuse kontroll
+
+Enne koodi ülevaatust kontrolli:
+
+1. [ ] Sisendid on valideeritud
+2. [ ] Ligipääsukontrollid on rakendatud
+3. [ ] Turvasündmused on logitud
+4. [ ] Tundlikud andmed on kaitstud
+5. [ ] Vigade käsitlemine on turvaline

@@ -1,0 +1,236 @@
+---
+description: EITS andmekaitse ja isikuandmete töötlemise nõuded
+globs: 
+alwaysApply: false
+---
+# EITS Andmekaitse Nõuded
+
+## Kontekst
+
+- Rakenda neid reegleid kui töötled isikuandmeid või tundlikku teavet
+- Nõuded põhinevad EITS AND-domeeni meetmetel ja GDPR-il
+- Turvaklassi K (konfidentsiaalsus) aste määrab kaitsemeetmete ulatuse
+
+## Andmete klassifitseerimine (AND.1)
+
+### Klassifikatsioonitasemed
+
+| Tase | Nimetus | Kirjeldus | Näited |
+|:-----|:--------|:----------|:-------|
+| **1** | Avalik | Vabalt levitatav | Pressiteated, avalikud dokumendid |
+| **2** | Asutusesisene | Ainult töötajatele | Sisekorraldused, tööjuhendid |
+| **3** | Piiratud | Vajaduspõhine ligipääs | Lepingud, finantsandmed |
+| **4** | Konfidentsiaalne | Rangelt piiratud | Isikuandmed, ärisaladused |
+| **5** | Salastatud | Riigisaladus | Julgeolekuinfo |
+
+### Klassifitseerimise reeglid
+
+```yaml
+Kohustuslikud märgised:
+  - Dokumendi päises
+  - Faili metaandmetes
+  - E-kirja teemareas (konfidentsiaalne+)
+
+Käsitlemise piirangud:
+  Avalik: Piiranguteta
+  Asutusesisene: Ainult sisevõrgus
+  Piiratud: Krüpteeritud edastus
+  Konfidentsiaalne: Krüpteeritud salvestus ja edastus
+  Salastatud: Eraldi süsteemid, füüsiline kaitse
+```
+
+## Isikuandmete kaitse (AND.5)
+
+### Isikuandmete kategooriad
+
+```yaml
+Tavalised isikuandmed:
+  - Nimi, kontaktandmed
+  - Töökoht, ametikoht
+  - Käsitlus: Standard kaitsemeetmed (K2)
+
+Erilised isikuandmed:
+  - Terviseandmed
+  - Usulised/poliitilised vaated
+  - Biomeetrilised andmed
+  - Käsitlus: Kõrgendatud kaitsemeetmed (K3)
+
+Delikaatsed andmed:
+  - Isikukood koos kontekstiga
+  - Finantsandmed
+  - Käsitlus: Kõrgendatud kaitsemeetmed (K3)
+```
+
+### Rakendamise nõuded
+
+```java
+// KOHUSTUSLIK: Isikuandmete pseudonüümistamine logides
+public void logUserAction(User user, String action) {
+    String maskedId = maskPersonalId(user.getPersonalId()); // "38001010***"
+    logger.info("User {} performed action: {}", maskedId, action);
+}
+
+// KOHUSTUSLIK: Isikuandmete krüpteerimine andmebaasis
+@Entity
+public class Person {
+    @Convert(converter = EncryptedStringConverter.class)
+    private String personalId;
+    
+    @Convert(converter = EncryptedStringConverter.class)
+    private String email;
+}
+
+// KOHUSTUSLIK: Andmete minimeerimine API vastustes
+public UserDTO toDTO(User user, boolean includeDetails) {
+    UserDTO dto = new UserDTO();
+    dto.setId(user.getId());
+    dto.setName(user.getName());
+    // Detailid ainult vajaduse korral
+    if (includeDetails && hasPermission("VIEW_PERSONAL_DATA")) {
+        dto.setEmail(user.getEmail());
+    }
+    return dto;
+}
+```
+
+## Varundamine (AND.2)
+
+### Varundamise nõuded turbeastme järgi
+
+| Aste | Sagedus | Säilitusaeg | Testimine |
+|:-----|:--------|:------------|:----------|
+| S1 | Nädalas 1x | 3 kuud | Aastas 1x |
+| S2 | Päevas 1x | 6 kuud | Kvartalis 1x |
+| S3 | Pidev (reaalajas) | 12 kuud | Kuus 1x |
+
+### Varundamise kontrollnimekiri
+
+```yaml
+Varukoopia loomine:
+  - [ ] Krüpteeritud varukoopiad
+  - [ ] Eraldiseisev asukoht (vähemalt 50km)
+  - [ ] Automaatne varundamine
+  - [ ] Varundamise logimine
+
+Varukoopia taastamine:
+  - [ ] Dokumenteeritud taastamisprotseduur
+  - [ ] Regulaarne taastamise testimine
+  - [ ] Taastamisaegade mõõtmine (RTO/RPO)
+  - [ ] Taastamise protokollimine
+
+Varukoopia kaitse:
+  - [ ] Ligipääsukontroll varukoopiatele
+  - [ ] Varukoopiate tervikluse kontroll
+  - [ ] Turvaline varukoopiate hävitamine
+```
+
+## Andmete säilitamine ja hävitamine (AND.3, AND.4)
+
+### Säilitustähtajad
+
+```yaml
+Raamatupidamisdokumendid: 7 aastat
+Töölepingud: 10 aastat pärast lõpetamist
+Turvalogid: 1-3 aastat (vastavalt turbeastmele)
+Isikuandmed: Kuni töötlemise eesmärgi täitumiseni
+Varunduslogid: 1 aasta
+```
+
+### Turvaline hävitamine
+
+```yaml
+Paberkandjad:
+  Tase 1-2: Purustamine (DIN 66399 P-3)
+  Tase 3-5: Purustamine (DIN 66399 P-5+)
+
+Digitaalsed andmed:
+  HDD: DoD 5220.22-M (3+ ülekirjutust) või füüsiline hävitamine
+  SSD: Krüptograafiline kustutamine + TRIM
+  
+Pilveandmed:
+  - Krüptovõtmete hävitamine
+  - Teenusepakkuja kinnituskirja nõudmine
+```
+
+### Hävitamise dokumenteerimine
+
+```markdown
+## Andmete hävitamise protokoll
+
+Kuupäev: [YYYY-MM-DD]
+Hävitaja: [Nimi, ametikoht]
+Tunnistaja: [Nimi, ametikoht]
+
+### Hävitatud andmed
+| Kirjeldus | Andmekandja | Maht | Meetod |
+|-----------|-------------|------|--------|
+| Personalitoimikud 2020 | Paber | 50 lehte | P-4 purustus |
+| Vanad varukoopiad | HDD 1TB | 1TB | DoD 5220.22-M |
+
+### Kinnitused
+- [ ] Andmed olid klassifitseeritud
+- [ ] Säilitustähtaeg oli möödunud
+- [ ] Hävitamine oli täielik
+- [ ] Protokoll on allkirjastatud
+
+Hävitaja allkiri: ________________
+Tunnistaja allkiri: ________________
+```
+
+## Andmete edastamine
+
+### Turvalise edastuse nõuded
+
+```yaml
+Asutusesisene (tase 2):
+  - Sisevõrk
+  - E-post (ilma krüpteerimiseta lubatud)
+
+Piiratud (tase 3):
+  - TLS 1.2+ krüpteeritud ühendus
+  - Krüpteeritud e-post (S/MIME, PGP)
+  - SFTP/SCP failiedastus
+
+Konfidentsiaalne (tase 4):
+  - End-to-end krüpteerimine
+  - Turvaline failijagamisteenus
+  - Vastuvõtja autentimine
+
+Salastatud (tase 5):
+  - Eraldatud võrgud
+  - Krüpteeritud andmekandjad
+  - Isiklik üleandmine
+```
+
+### Rakendamise näide
+
+```java
+// KOHUSTUSLIK: Kontrolli edastuskanali turvalisust
+public void sendSensitiveData(String recipient, SensitiveData data) {
+    SecurityLevel requiredLevel = data.getClassification().getSecurityLevel();
+    
+    if (!channel.supportsSecurityLevel(requiredLevel)) {
+        throw new SecurityException("Channel security level insufficient");
+    }
+    
+    // Krüpteeri enne edastamist
+    EncryptedPayload encrypted = encryptionService.encrypt(data);
+    
+    // Logi edastus (ilma sisuta)
+    AuditLogger.logDataTransfer(recipient, data.getClassification(), 
+                                 data.getRecordCount());
+    
+    channel.send(recipient, encrypted);
+}
+```
+
+## Kriitilised reeglid
+
+- **ALATI** klassifitseeri andmed enne töötlemist
+- **ALATI** krüpteeri konfidentsiaalsed andmed rahus ja liikumisel
+- **ALATI** dokumenteeri andmete hävitamine
+- **ALATI** järgi andmete minimaalsuse põhimõtet
+- **MITTE KUNAGI** salvesta isikukoode selge tekstina
+- **MITTE KUNAGI** edasta konfidentsiaalseid andmeid krüpteerimata kanalitel
+- **MITTE KUNAGI** säilita andmeid kauem kui vajalik
+- **MITTE KUNAGI** hävita andmeid ilma dokumenteerimata

@@ -1,0 +1,288 @@
+---
+description: EITS intsidentide halduse protsessid ja nõuded
+globs: 
+alwaysApply: false
+---
+# EITS Intsidentide Haldus
+
+## Kontekst
+
+- Rakenda neid protseduure turva- ja IT-intsidentide korral
+- Põhineb EITS INT-domeeni meetmetel
+- Kriitiliste intsidentide puhul teavita CERT-EE 24 tunni jooksul
+
+## Intsidentide klassifikatsioon (INT.1)
+
+### Tõsidusastmed
+
+| Aste | Nimetus | Kriteeriumid | Reageerimisaeg |
+|:-----|:--------|:-------------|:---------------|
+| **P1** | Kriitiline | Teenused maas, andmeleke, aktiivne rünnak | Koheselt (15 min) |
+| **P2** | Kõrge | Oluline funktsionaalsuse kadu, potentsiaalne oht | 1 tund |
+| **P3** | Keskmine | Piiratud mõju, üksik süsteem | 4 tundi |
+| **P4** | Madal | Minimaalne mõju, info-intsident | Järgmine tööpäev |
+
+### Intsidentide tüübid
+
+```yaml
+Küberintsidendid:
+  - Pahavara avastamine
+  - Andmeleke või -vargus
+  - DDoS rünnak
+  - Volitamata ligipääs
+  - Andmepüük (phishing)
+  - Lunavara
+
+IT intsidendid:
+  - Süsteemi rike
+  - Võrgukatkestus
+  - Andmebaasi tõrge
+  - Rakenduse viga
+  - Jõudlusprobleemid
+
+Füüsilised intsidendid:
+  - Volitamata sisenemine
+  - Seadmete vargus
+  - Keskkonnakahjustus
+```
+
+## Reageerimisprotsess (INT.2)
+
+### Faas 1: Tuvastamine ja teavitamine
+
+```yaml
+Tuvastamisallikad:
+  - Monitooringusüsteemid (SIEM, IDS/IPS)
+  - Kasutajate teavitused
+  - Automaatsed häired
+  - Välised teated (CERT-EE, partnerid)
+
+Esmased toimingud:
+  1. Dokumenteeri avastamise aeg ja allikas
+  2. Kogu esmased tõendid (logid, ekraanipildid)
+  3. Hinda tõsidust ja mõju
+  4. Teavita vastavalt eskalatsiooniprokseduurile
+```
+
+### Eskalatsioonimaatriks
+
+```yaml
+P1 (Kriitiline):
+  - IT juht: Koheselt
+  - Infoturbe juht: Koheselt
+  - Juhtkond: 30 min jooksul
+  - CERT-EE: 24h jooksul
+  - Andmekaitse Inspektsioon: 72h (andmeleke)
+
+P2 (Kõrge):
+  - IT juht: 1h jooksul
+  - Infoturbe juht: 2h jooksul
+  - Juhtkond: Sama tööpäev
+
+P3 (Keskmine):
+  - IT juht: 4h jooksul
+  - Infoturbe juht: Järgmine tööpäev
+
+P4 (Madal):
+  - Registreeri intsidentide haldussüsteemis
+  - Käsitle tavapärase töö käigus
+```
+
+### Faas 2: Ohjeldamine
+
+```yaml
+Lühiajaline ohjeldamine:
+  - Mõjutatud süsteemide isoleerimine
+  - Kompromiteeritud kontode blokeerimine
+  - Pahatahtliku liikluse blokeerimine
+  - Tõendite säilitamine
+
+Pikaajaline ohjeldamine:
+  - Ajutiste kontrollmeetmete rakendamine
+  - Alternatiivse teeninduse sisseseadmine
+  - Täiendava monitooringu aktiveerimine
+```
+
+### Faas 3: Likvideerimine
+
+```yaml
+Pahavara intsident:
+  1. Tuvasta nakatunud süsteemid
+  2. Isoleeri süsteemid
+  3. Eemalda pahavara
+  4. Paigalda turvauuendused
+  5. Vaheta kompromiteeritud paroolid
+  6. Kontrolli süsteemide puhtust
+
+Volitamata ligipääs:
+  1. Blokeeri kasutatud ligipääsutee
+  2. Tühista kompromiteeritud volitused
+  3. Sulge haavatavus
+  4. Analüüsi ligipääsu ulatust
+  5. Kontrolli andmete terviklust
+```
+
+### Faas 4: Taastamine
+
+```yaml
+Taastamise etapid:
+  1. Kontrolli süsteemide turvalisust
+  2. Taasta süsteemid varukoopiast (vajadusel)
+  3. Rakenda turvakonfiguratsioone
+  4. Testi funktsionaalsust
+  5. Lülita sisse monitooring
+  6. Taasta teenused järk-järgult
+
+Taastamise kontrollnimekiri:
+  - [ ] Süsteemid on puhtad/taastatud
+  - [ ] Haavatavused on paigatud
+  - [ ] Paroolid on vahetatud
+  - [ ] Logid on analüüsitud
+  - [ ] Monitooring on aktiivne
+  - [ ] Kasutajad on teavitatud
+```
+
+### Faas 5: Järeltegevused
+
+```yaml
+Dokumenteerimine:
+  - Intsidendi kronoloogia
+  - Mõjutatud süsteemid ja kasutajad
+  - Rakendatud meetmed
+  - Saadud õppetunnid
+
+Juurpõhjuste analüüs (RCA):
+  - Mis juhtus?
+  - Miks juhtus?
+  - Kuidas avastati?
+  - Mis läks valesti?
+  - Kuidas tulevikus vältida?
+
+Parendusmeetmed:
+  - Tehnilised parandused
+  - Protsesside täiustused
+  - Koolituste vajadus
+  - Dokumentatsiooni uuendused
+```
+
+## Intsidendi dokumenteerimine (INT.3)
+
+### Intsidendi raport
+
+```markdown
+# Intsidendi raport
+
+## Üldandmed
+- **Intsidendi ID:** INC-2024-XXX
+- **Tõsidus:** P1/P2/P3/P4
+- **Staatus:** Avatud/Käsitlemisel/Suletud
+- **Avastamise aeg:** YYYY-MM-DD HH:MM
+- **Lahendamise aeg:** YYYY-MM-DD HH:MM
+
+## Intsidendi kirjeldus
+[Üksikasjalik kirjeldus juhtunust]
+
+## Kronoloogia
+| Aeg | Sündmus | Tegevus |
+|-----|---------|---------|
+| HH:MM | Intsident avastatud | Häire monitooringust |
+| HH:MM | Eskalatsioon | IT juht teavitatud |
+| ... | ... | ... |
+
+## Mõju
+- **Mõjutatud süsteemid:** [Nimekiri]
+- **Mõjutatud kasutajad:** [Arv/nimekiri]
+- **Äriline mõju:** [Kirjeldus]
+- **Andmete mõjutatus:** [Kas andmed lekkisid/kahjustusid]
+
+## Rakendatud meetmed
+1. [Meede 1]
+2. [Meede 2]
+...
+
+## Juurpõhjus
+[Analüüsi tulemused]
+
+## Parendusmeetmed
+| # | Meede | Vastutaja | Tähtaeg | Staatus |
+|---|-------|-----------|---------|---------|
+| 1 | ... | ... | ... | ... |
+
+## Lisad
+- Logid
+- Ekraanipildid
+- Suhtluse protokoll
+```
+
+## CERT-EE teavitamine (INT.4)
+
+### Kohustuslikud teavitused
+
+```yaml
+Teavita alati:
+  - Ründed riigi infosüsteemide vastu
+  - Teenuste massilised katkestused
+  - Olulised andmelekked
+  - Kriitilise taristu intsidendid
+  - Lunavara juhtumid
+
+Teavitamise aeg:
+  - Kriitiline: 24 tunni jooksul
+  - Kõrge: 72 tunni jooksul
+
+Teavitamise kanal:
+  - E-post: cert@cert.ee
+  - Telefon: +372 663 0299 (24/7)
+  - Veebivorm: https://www.cert.ee/teavita
+```
+
+### Teavituse sisu
+
+```yaml
+Kohustuslikud andmed:
+  - Organisatsiooni nimi ja kontakt
+  - Intsidendi kirjeldus
+  - Mõjutatud süsteemid
+  - Tuvastamise aeg
+  - Hinnanguline mõju
+  - Rakendatud meetmed
+
+Soovituslikud andmed:
+  - IOC-d (Indicators of Compromise)
+  - Logid
+  - Pahavara näidised
+```
+
+## Intsidentide halduse mõõdikud
+
+### Jälgitavad mõõdikud
+
+```yaml
+Ajalised mõõdikud:
+  - MTTD (Mean Time to Detect): Keskmine avastamisaeg
+  - MTTR (Mean Time to Respond): Keskmine reageerimisaeg
+  - MTTC (Mean Time to Contain): Keskmine ohjeldamisaeg
+  - MTTRE (Mean Time to Recover): Keskmine taastamisaeg
+
+Mahulised mõõdikud:
+  - Intsidentide arv perioodis
+  - Intsidentide jaotus tõsiduse järgi
+  - Korduvate intsidentide arv
+  - Lahendamata intsidentide arv
+
+Kvaliteedimõõdikud:
+  - Eskalatsioonide täpsus
+  - Valehäirete osakaal
+  - Parendusmeetmete rakendamise määr
+```
+
+## Kriitilised reeglid
+
+- **ALATI** dokumenteeri intsidendid koheselt
+- **ALATI** säilita tõendid enne süsteemide muutmist
+- **ALATI** järgi eskalatsiooniprotseduure
+- **ALATI** teavita CERT-EE kriitiliste intsidentide korral
+- **MITTE KUNAGI** eira turvasündmusi
+- **MITTE KUNAGI** kustuta logisid enne analüüsi
+- **MITTE KUNAGI** avalda intsidendi detaile volitamata isikutele
+- **MITTE KUNAGI** jäta intsidenti dokumenteerimata

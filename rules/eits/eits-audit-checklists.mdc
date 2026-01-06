@@ -1,0 +1,834 @@
+---
+description: EITS auditi täielikud kontrollnimekirjad kõigi domeenide jaoks
+globs: 
+alwaysApply: false
+---
+# EITS Auditi Kontrollnimekirjad
+
+## Kontekst
+
+- Kasuta neid kontrollnimekirju EITS auditi läbiviimisel
+- Kontrollid on jaotatud turbeastmete kaupa (1-madal, 2-keskmine, 3-kõrge)
+- Märgi ✓ vastavuse, ○ osalise vastavuse ja ✗ mittevastavuse korral
+
+## ORG - Organisatsioonilised meetmed
+
+### ORG.1 Infoturbe poliitika
+
+#### Aste 1 (Madal)
+- [ ] Infoturbe poliitika on dokumenteeritud
+- [ ] Poliitika on juhtkonna poolt kinnitatud
+- [ ] Poliitika on töötajatele kättesaadav
+- [ ] Poliitika sisaldab põhilisi turvanõudeid
+
+#### Aste 2 (Keskmine) - lisaks aste 1 nõuetele
+- [ ] Poliitika on seotud organisatsiooni strateegiaga
+- [ ] Poliitika sisaldab selgeid rolle ja vastutusi
+- [ ] Poliitika vaadatakse üle vähemalt kord aastas
+- [ ] Poliitika muudatused on jälgitavad
+
+#### Aste 3 (Kõrge) - lisaks aste 2 nõuetele
+- [ ] Poliitika on integreeritud juhtimissüsteemi
+- [ ] Regulaarne vastavuse aruandlus juhtkonnale
+- [ ] Poliitika efektiivsuse mõõtmine
+- [ ] Sõltumatu ülevaatus vähemalt kord aastas
+
+### ORG.2 Infoturbe korraldus
+
+#### Aste 1
+- [ ] Infoturbe eest vastutav isik on määratud
+- [ ] Põhilised rollid ja vastutused on dokumenteeritud
+- [ ] Infoturbe ülesanded on töötajatele teada
+
+#### Aste 2
+- [ ] Infoturbe juhi roll on formaalselt määratletud
+- [ ] Infoturbe komitee/meeskond on moodustatud
+- [ ] Regulaarsed infoturbe koosolekud toimuvad
+- [ ] Infoturbe eelarve on eraldatud
+
+#### Aste 3
+- [ ] Infoturbe osakond on eraldi üksus
+- [ ] CISO raporteerib otse juhtkonnale
+- [ ] Infoturbe KPI-d on määratletud ja jälgitavad
+- [ ] Regulaarne juhtkonna ülevaatus (min kvartalis)
+
+### ORG.3 Riskihaldus
+
+#### Aste 1
+- [ ] Riskihindamise metoodika on olemas
+- [ ] Põhilised riskid on tuvastatud
+- [ ] Riskiregister on olemas
+- [ ] Riske hinnatakse vähemalt kord aastas
+
+#### Aste 2
+- [ ] Riskihindamine põhineb tunnustatud metoodikal
+- [ ] Riskide käsitlusplaan on koostatud
+- [ ] Riske jälgitakse ja uuendatakse kvartalis
+- [ ] Riskide aktsepteerimine on dokumenteeritud
+
+#### Aste 3
+- [ ] Pidev riskijälgimine on rakendatud
+- [ ] Riskide automaatne tuvastamine (haavatavused, ohud)
+- [ ] Riskikäsitluse efektiivsust mõõdetakse
+- [ ] Kolmanda osapoole riskihindamised
+
+### ORG.4 Varade haldus
+
+#### Aste 1
+- [ ] IT varade nimekiri on olemas
+- [ ] Varade omanikud on määratud
+- [ ] Põhilised klassifikatsioonid on rakendatud
+
+#### Aste 2
+- [ ] Täielik CMDB (konfiguratsioonihalduse andmebaas)
+- [ ] Varade sõltuvused on kaardistatud
+- [ ] Varade elutsükli haldus on rakendatud
+- [ ] Automaatne varade inventuur
+
+#### Aste 3
+- [ ] Reaalajas varade jälgimine
+- [ ] Varade ja riskide seostamine
+- [ ] Automaatne vastavuse kontroll
+- [ ] Varade turvaklassifikatsiooni audit
+
+### ORG.5 Infoturbe teadlikkus
+
+#### Aste 1
+- [ ] Sissejuhatav turvakoolitus uutele töötajatele
+- [ ] Põhilised turvajuhised on dokumenteeritud
+- [ ] Turvapoliitikad on töötajatele kättesaadavad
+
+#### Aste 2
+- [ ] Regulaarne turvakoolitus (min kord aastas)
+- [ ] Rollipõhine koolitus (IT, juhid, kasutajad)
+- [ ] Andmepüügi simulatsioonid
+- [ ] Koolituse läbimise jälgimine
+
+#### Aste 3
+- [ ] Pidev teadlikkuse programm
+- [ ] Personaliseeritud koolitused riskide põhjal
+- [ ] Teadlikkuse mõõtmine ja analüüs
+- [ ] Gamification ja interaktiivsed koolitused
+
+## PER - Personaliga seotud meetmed
+
+### PER.1 Töötajate taustakontroll
+
+#### Aste 1
+- [ ] Taustakontrolli protsess on määratletud
+- [ ] Dokumentide kontrollimine tööleasumisel
+- [ ] Soovitajate kontrollimine
+
+#### Aste 2
+- [ ] Formaalne taustakontrolli protseduur
+- [ ] Karistusregistri kontroll
+- [ ] Täiendav kontroll tundlike positsioonide puhul
+
+#### Aste 3
+- [ ] Laiendatud taustakontroll (rahvusvaheline)
+- [ ] Regulaarne taustakontrolli uuendamine
+- [ ] Julgeolekukontroll riigisaladuse loa puhul
+
+### PER.2 Konfidentsiaalsuskokkulepped
+
+#### Aste 1
+- [ ] NDA on töölepingu osa
+- [ ] Konfidentsiaalsuskohustused on selgitatud
+
+#### Aste 2
+- [ ] Eraldi konfidentsiaalsuslepe tundlike andmetega töötajatele
+- [ ] NDA-d kolmandate osapooltega
+- [ ] Kohustuste meeldetuletus lahkumisel
+
+#### Aste 3
+- [ ] Rollipõhised konfidentsiaalsuslepingud
+- [ ] Regulaarne kohustuste ülevaatus
+- [ ] Rikkumiste tagajärgede dokumenteerimine
+
+### PER.3 Töösuhte lõpetamine
+
+#### Aste 1
+- [ ] Lahkumisprotsess on dokumenteeritud
+- [ ] Ligipääsuõiguste tühistamine lahkumisel
+- [ ] Organisatsiooni vara tagastamine
+
+#### Aste 2
+- [ ] Formaalne off-boarding kontrollnimekiri
+- [ ] Ligipääsude tühistamine 24h jooksul
+- [ ] Exit-intervjuu läbiviimine
+
+#### Aste 3
+- [ ] Automaatne ligipääsude tühistamine
+- [ ] Laiendatud jälgimisperiood pärast lahkumist
+- [ ] Andmete üleandmise audit
+
+## FYY - Füüsiline turvalisus
+
+### FYY.1 Turvaperimeeter
+
+#### Aste 1
+- [ ] Hoone/ruumide füüsiline piiritlemine
+- [ ] Põhilised lukud ja uksed
+- [ ] Külaliste registreerimine
+
+#### Aste 2
+- [ ] Turvapiirkonnad on määratletud
+- [ ] Videovalve põhilistel aladel
+- [ ] Valvur või vastuvõtt tööajal
+
+#### Aste 3
+- [ ] Mitmekihiline kaitse (perimeeter, hoone, ruum)
+- [ ] 24/7 videovalve ja salvestamine
+- [ ] Alarmsüsteemid koos reageerimisteenusega
+
+### FYY.2 Ligipääsukontroll
+
+#### Aste 1
+- [ ] Võtmete/kaartide haldus
+- [ ] Ligipääs ainult volitatud isikutele
+- [ ] Külaliste saatmine
+
+#### Aste 2
+- [ ] Elektrooniline ligipääsukontroll
+- [ ] Ligipääsulogide pidamine
+- [ ] Regulaarne ligipääsuõiguste ülevaatus
+
+#### Aste 3
+- [ ] Biomeetriline kontroll tundlikel aladel
+- [ ] Mantrap/topeltukse süsteem
+- [ ] Reaalajas ligipääsu monitooring
+
+### FYY.3 Serverruumide turvalisus
+
+#### Aste 1
+- [ ] Eraldi lukustatav serverruum
+- [ ] Piiratud ligipääs ainult IT personalile
+- [ ] Põhiline jahutus ja ventilatsioon
+
+#### Aste 2
+- [ ] Täiendav ligipääsukontroll (kaart + PIN)
+- [ ] Keskkonnaandurid (temperatuur, niiskus)
+- [ ] UPS ja ülepingekaitseee
+
+#### Aste 3
+- [ ] Eraldiseisev turvaline andmekeskus
+- [ ] Redundantne jahutus ja toide
+- [ ] Automaatne tulekustutussüsteem
+- [ ] 24/7 füüsiline valve
+
+### FYY.4 Seadmete kaitse
+
+#### Aste 1
+- [ ] Sülearvutite lukud
+- [ ] Seadmete märgistamine
+- [ ] Põhiline füüsiline kaitse
+
+#### Aste 2
+- [ ] Ketta krüpteerimine kõigil seadmetel
+- [ ] Kaugpühkimise võimalus
+- [ ] Seadmete jälgimine (MDM)
+
+#### Aste 3
+- [ ] Riistvaraline krüpteerimine (TPM)
+- [ ] Seadmete füüsiline audit
+- [ ] Turvalised seadmete hävitamisprotseduurid
+
+### FYY.5 Keskkonnaohud
+
+#### Aste 1
+- [ ] Suitsuandurid
+- [ ] Tulekustutid
+- [ ] Põhiline üleujutuse kaitse
+
+#### Aste 2
+- [ ] Automaatne tulekahjusignalisatsioon
+- [ ] Veelekke andurid
+- [ ] Kliimakontroll
+
+#### Aste 3
+- [ ] Automaatne tulekustutussüsteem
+- [ ] Redundantne kliimaseade
+- [ ] Seismiline kaitse (kui asjakohane)
+
+## VOR - Võrguturvalisus
+
+### VOR.1 Võrgu segmenteerimine
+
+#### Aste 1
+- [ ] Sisevõrk on eraldatud internetist
+- [ ] Põhiline tulemüür
+- [ ] DMZ veebiserveritele
+
+#### Aste 2
+- [ ] VLAN-põhine segmenteerimine
+- [ ] Serverid eraldi segmendis
+- [ ] Kasutajate ja serverite eraldamine
+
+#### Aste 3
+- [ ] Mikrosegmenteerimine
+- [ ] Zero Trust arhitektuur
+- [ ] Software-defined networking (SDN)
+
+### VOR.2 Tulemüürid
+
+#### Aste 1
+- [ ] Perimeetri tulemüür
+- [ ] Vaikimisi keelav poliitika
+- [ ] Põhilised reeglid dokumenteeritud
+
+#### Aste 2
+- [ ] Next-generation tulemüür (NGFW)
+- [ ] Rakenduskihi filtreerimine
+- [ ] Regulaarne reeglite ülevaatus
+
+#### Aste 3
+- [ ] Redundantne tulemüür (HA)
+- [ ] Automaatne ohuluure integratsioon
+- [ ] Reaalajas reeglite analüüs
+
+### VOR.3 Sissetungituvastus
+
+#### Aste 1
+- [ ] Põhiline võrgu monitooring
+- [ ] Logide kogumine
+
+#### Aste 2
+- [ ] IDS/IPS süsteem
+- [ ] Häirete konfigureerimine
+- [ ] Regulaarne signatuuride uuendamine
+
+#### Aste 3
+- [ ] Käitumuslik anomaaliate tuvastamine
+- [ ] Automaatne reageerimine
+- [ ] Threat hunting võimekus
+
+### VOR.4 Kaugjuurdepääs
+
+#### Aste 1
+- [ ] VPN kaugtöö jaoks
+- [ ] Tugev autentimine
+- [ ] Krüpteeritud ühendused
+
+#### Aste 2
+- [ ] MFA kaugjuurdepääsul
+- [ ] Split tunneling keelatud
+- [ ] Seadmete vastavuse kontroll
+
+#### Aste 3
+- [ ] Zero Trust kaugjuurdepääs (ZTNA)
+- [ ] Pidev seadme ja kasutaja valideerimine
+- [ ] Sessiooni salvestamine privilegeeritud ligipääsul
+
+### VOR.5 Traadita võrgud
+
+#### Aste 1
+- [ ] WPA2/WPA3 krüpteerimine
+- [ ] Külaliste WiFi eraldatud
+- [ ] Vaikeparoolid muudetud
+
+#### Aste 2
+- [ ] 802.1X autentimine
+- [ ] Traadita võrgu monitooring
+- [ ] Võõraste pääsupunktide tuvastamine
+
+#### Aste 3
+- [ ] Traadita IDS/IPS
+- [ ] Automaatne võõraste AP-de blokeerimine
+- [ ] WiFi kasutajate profileerimine
+
+## SYS - Süsteemiturvalisus
+
+### SYS.1 Konfiguratsiooni haldus
+
+#### Aste 1
+- [ ] Turvalised vaikekonfiguratsioonid
+- [ ] Mittevajalike teenuste keelamine
+- [ ] Administraatoriparoolide muutmine
+
+#### Aste 2
+- [ ] Konfiguratsiooni baasjooned (baselines)
+- [ ] Automaatne konfiguratsiooni jälgimine
+- [ ] Muudatuste haldus
+
+#### Aste 3
+- [ ] Infrastructure as Code
+- [ ] Pidev konfiguratsiooni vastavuse kontroll
+- [ ] Automaatne remediatsiooon
+
+### SYS.2 Paikade haldus
+
+#### Aste 1
+- [ ] Uuenduste protsess on määratletud
+- [ ] Kriitilised uuendused 30 päeva jooksul
+- [ ] Uuenduste testimine
+
+#### Aste 2
+- [ ] Automaatne uuenduste kontroll
+- [ ] Kriitilised uuendused 14 päeva jooksul
+- [ ] Uuenduste dokumenteerimine
+
+#### Aste 3
+- [ ] Kriitilised uuendused 72 tunni jooksul
+- [ ] Automaatne paigaldamine (võimalusel)
+- [ ] Pidev haavatavuste skaneerimine
+
+### SYS.3 Pahavara kaitse
+
+#### Aste 1
+- [ ] Viirusetõrje kõigil tööjaamadel
+- [ ] Regulaarne signatuuride uuendamine
+- [ ] Reaalajas skaneerimine
+
+#### Aste 2
+- [ ] Endpoint Detection and Response (EDR)
+- [ ] Tsentraliseeritud haldus
+- [ ] Pahavara raportid ja analüüs
+
+#### Aste 3
+- [ ] Next-gen endpoint kaitse
+- [ ] Käitumuslik analüüs
+- [ ] Automaatne isoleerimine ja reageerimine
+
+### SYS.4 Logide haldus
+
+#### Aste 1
+- [ ] Põhiliste sündmuste logimine
+- [ ] Logide säilitamine (min 1 aasta)
+- [ ] Logide kaitse muutmise eest
+
+#### Aste 2
+- [ ] Tsentraliseeritud logihaldus
+- [ ] Logide korrelatsioon
+- [ ] Häirete seadistamine
+
+#### Aste 3
+- [ ] SIEM lahendus
+- [ ] Reaalajas analüüs
+- [ ] Automaatne ohtude tuvastamine
+
+### SYS.5 Ajasünkroniseerimine
+
+#### Aste 1
+- [ ] NTP on konfigureeritud
+- [ ] Usaldusväärne ajaallikas
+
+#### Aste 2
+- [ ] Redundantsed NTP serverid
+- [ ] Ajanihe jälgimine
+
+#### Aste 3
+- [ ] Autenditud NTP
+- [ ] GPS-põhine ajaallikas kriitiliste süsteemide jaoks
+
+## RAK - Rakenduste turvalisus
+
+### RAK.1 Turvaline arendus
+
+#### Aste 1
+- [ ] Turvalise arenduse põhimõtted dokumenteeritud
+- [ ] Koodi ülevaatus
+- [ ] Põhilised turvatestid
+
+#### Aste 2
+- [ ] SAST (staatiline analüüs)
+- [ ] DAST (dünaamiline analüüs)
+- [ ] SCA (sõltuvuste analüüs)
+- [ ] Turvanõuded spetsifikatsioonis
+
+#### Aste 3
+- [ ] DevSecOps täielikult juurutatud
+- [ ] Pidev turbekontroll CI/CD-s
+- [ ] Läbistustestimine enne väljalaset
+- [ ] Bug bounty programm
+
+### RAK.2 Sisendi valideerimine
+
+#### Aste 1
+- [ ] Sisendi valideerimine on rakendatud
+- [ ] Parameetriseeritud päringud
+
+#### Aste 2
+- [ ] Valge nimekirja põhine valideerimine
+- [ ] Väljundi kodeerimine
+- [ ] File upload piirangud
+
+#### Aste 3
+- [ ] Automaatne sisendi testimine
+- [ ] WAF (Web Application Firewall)
+- [ ] API piirangud ja valideerimine
+
+### RAK.3 Autentimine
+
+#### Aste 1
+- [ ] Tugev paroolipoliitika
+- [ ] Konto lukustamine
+- [ ] Turvaline parooli taastamine
+
+#### Aste 2
+- [ ] MFA privilegeeritud kasutajatele
+- [ ] Sessioonide haldus
+- [ ] Autentimise logimine
+
+#### Aste 3
+- [ ] MFA kõigile kasutajatele
+- [ ] Riskipõhine autentimine
+- [ ] Passwordless autentimine
+
+### RAK.4 Autoriseerimine
+
+#### Aste 1
+- [ ] Rollipõhine ligipääsukontroll (RBAC)
+- [ ] Vähimate õiguste põhimõte
+- [ ] Ligipääsu logimine
+
+#### Aste 2
+- [ ] Atribuudipõhine ligipääsukontroll (ABAC)
+- [ ] Regulaarne õiguste ülevaatus
+- [ ] Automaatne õiguste tühistamine
+
+#### Aste 3
+- [ ] Just-in-time ligipääs
+- [ ] Pidev ligipääsu valideerimine
+- [ ] Privilegeeritud ligipääsu haldus (PAM)
+
+### RAK.5 Sessioonihaldus
+
+#### Aste 1
+- [ ] Turvalised sessioonitokenid
+- [ ] Sessioonide aegumne
+- [ ] Väljalogimine
+
+#### Aste 2
+- [ ] Sessioonide sidumine kasutajaga
+- [ ] Samaaegste sessioonide piiramine
+- [ ] Sessioonide tühistamine
+
+#### Aste 3
+- [ ] Sessioonide reaalajas monitooring
+- [ ] Anomaaliate tuvastamine
+- [ ] Automaatne sessioonide tühistamine ohu korral
+
+### RAK.6 Krüptograafia
+
+#### Aste 1
+- [ ] HTTPS kõigil veebirakendustel
+- [ ] Paroolide räsimine (bcrypt, Argon2)
+- [ ] Turvalised algoritmi valikud
+
+#### Aste 2
+- [ ] Andmete krüpteerimine rahus
+- [ ] Võtmehalduse protsess
+- [ ] Sertifikaatide haldus
+
+#### Aste 3
+- [ ] End-to-end krüpteerimine
+- [ ] HSM võtmehalduseks
+- [ ] Krüptoanalüüsi audit
+
+## AND - Andmete turvalisus
+
+### AND.1 Andmete klassifitseerimine
+
+#### Aste 1
+- [ ] Klassifikatsioonisüsteem on määratletud
+- [ ] Põhilised klassid on kasutusel
+- [ ] Töötajad on teadlikud
+
+#### Aste 2
+- [ ] Automaatne klassifitseerimine
+- [ ] Klassifikatsiooni märgised
+- [ ] Klassifikatsiooni jälgimine
+
+#### Aste 3
+- [ ] AI-põhine klassifitseerimine
+- [ ] DLP (Data Loss Prevention)
+- [ ] Klassifikatsiooni audit
+
+### AND.2 Varundamine
+
+#### Aste 1
+- [ ] Regulaarne varundamine (min 1x nädalas)
+- [ ] Varukoopiate testimine (min 1x aastas)
+- [ ] Eraldiseisev hoidla
+
+#### Aste 2
+- [ ] Igapäevane varundamine
+- [ ] Varukoopiate krüpteerimine
+- [ ] Testimine kvartalis
+
+#### Aste 3
+- [ ] Pidev varundamine (reaalajas)
+- [ ] Geograafiliselt hajutatud hoidlad
+- [ ] Automaatne taastamise testimine
+
+### AND.3 Andmete säilitamine
+
+#### Aste 1
+- [ ] Säilitustähtajad on määratletud
+- [ ] Põhiline elutsükli haldus
+
+#### Aste 2
+- [ ] Automaatne aegumise jälgimine
+- [ ] Säilituspoliitikate jõustamine
+
+#### Aste 3
+- [ ] Automaatne andmete arhiveerimine/kustutamine
+- [ ] Säilitamise audit
+
+### AND.4 Andmete hävitamine
+
+#### Aste 1
+- [ ] Hävitamise protsess on dokumenteeritud
+- [ ] Turvaline kustutamine
+
+#### Aste 2
+- [ ] Sertifitseeritud hävitamine
+- [ ] Hävitamise dokumenteerimine
+
+#### Aste 3
+- [ ] Krüptograafiline kustutamine
+- [ ] Kolmanda osapoole kinnitus
+
+### AND.5 Isikuandmete kaitse
+
+#### Aste 1
+- [ ] GDPR vastavus
+- [ ] Privaatsuspoliitika
+- [ ] Andmekaitse kontaktisik
+
+#### Aste 2
+- [ ] Andmekaitseametnik (DPO)
+- [ ] Andmetöötluse register
+- [ ] Mõjuhinnangud (DPIA)
+
+#### Aste 3
+- [ ] Privacy by Design
+- [ ] Automaatne vastavuse kontroll
+- [ ] Regulaarsed andmekaitse auditid
+
+## TOI - Toimepidevus
+
+### TOI.1 Järjepidevuse planeerimine
+
+#### Aste 1
+- [ ] BCP on dokumenteeritud
+- [ ] Kriitilised protsessid on tuvastatud
+- [ ] Põhilised taastamisplaanid
+
+#### Aste 2
+- [ ] Täielik BCP
+- [ ] BIA (Business Impact Analysis)
+- [ ] Alternatiivsed toimingud
+
+#### Aste 3
+- [ ] Integreeritud BCP
+- [ ] Automaatne ümberlülitumine
+- [ ] Regulaarne BIA uuendamine
+
+### TOI.2 Taasteplaan (DRP)
+
+#### Aste 1
+- [ ] DRP on dokumenteeritud
+- [ ] RTO/RPO on määratletud
+- [ ] Põhilised protseduurid
+
+#### Aste 2
+- [ ] Detailne DRP
+- [ ] Varusalvestuskoht
+- [ ] Taastamismeeskond
+
+#### Aste 3
+- [ ] Automaatne failover
+- [ ] Hot standby keskkond
+- [ ] Pidev replikatsioon
+
+### TOI.3 Plaanide testimine
+
+#### Aste 1
+- [ ] Testimine min 1x aastas
+- [ ] Tabletop harjutused
+
+#### Aste 2
+- [ ] Testimine min 2x aastas
+- [ ] Simulatsioonharjutused
+- [ ] Testitulemuste dokumenteerimine
+
+#### Aste 3
+- [ ] Testimine min kvartalis
+- [ ] Täismahus harjutused
+- [ ] Pidev parendamine
+
+### TOI.4 Kriisijuhtimine
+
+#### Aste 1
+- [ ] Kriisijuhtimise struktuur
+- [ ] Põhilised protseduurid
+- [ ] Kontaktide nimekiri
+
+#### Aste 2
+- [ ] Kriisijuhtimise meeskond
+- [ ] Kommunikatsiooniplaan
+- [ ] Meedia suhtlus
+
+#### Aste 3
+- [ ] 24/7 kriisivalmisoleku meeskond
+- [ ] Kriisikeskus
+- [ ] Regulaarsed kriisiharjutused
+
+## INT - Intsidentide haldus
+
+### INT.1 Intsidentide tuvastamine
+
+#### Aste 1
+- [ ] Tuvastamisprotsess on määratletud
+- [ ] Põhiline monitooring
+- [ ] Kasutajate teavituskanal
+
+#### Aste 2
+- [ ] Automaatne tuvastamine
+- [ ] IDS/IPS integratsioon
+- [ ] Häiresüsteem
+
+#### Aste 3
+- [ ] 24/7 SOC
+- [ ] SIEM integratsioon
+- [ ] Threat intelligence
+
+### INT.2 Intsidentide reageerimine
+
+#### Aste 1
+- [ ] Reageerimisprotsess on dokumenteeritud
+- [ ] Põhilised rollid määratud
+- [ ] Eskalatsiooniprot seduur
+
+#### Aste 2
+- [ ] Intsidentide reageerimise meeskond (IRT)
+- [ ] Playbook'd levinud intsidentidele
+- [ ] Regulaarsed harjutused
+
+#### Aste 3
+- [ ] 24/7 reageerimisvalmisolek
+- [ ] Automaatne reageerimine (SOAR)
+- [ ] Forensika võimekus
+
+### INT.3 Intsidentide analüüs
+
+#### Aste 1
+- [ ] Intsidentide dokumenteerimine
+- [ ] Põhiline juurpõhjuste analüüs
+
+#### Aste 2
+- [ ] Formaalne RCA protsess
+- [ ] Lessons learned sessioonid
+- [ ] Parendusmeetmete jälgimine
+
+#### Aste 3
+- [ ] Detailne forensika
+- [ ] Ohuluure integratsioon
+- [ ] Trendide analüüs
+
+### INT.4 Teavitamine
+
+#### Aste 1
+- [ ] CERT-EE teavitamise protsess
+- [ ] Sisemised teavitused
+
+#### Aste 2
+- [ ] Automaatne teavituste genereerimine
+- [ ] Sidusrühmade teavitamine
+- [ ] Regulaatori teavitamine
+
+#### Aste 3
+- [ ] Integreeritud teavitussüsteem
+- [ ] Avalik kommunikatsioon
+- [ ] Meediasuhted
+
+## VAS - Vastavuse meetmed
+
+### VAS.1 Õigusaktide vastavus
+
+#### Aste 1
+- [ ] Kohalduvad õigusaktid on tuvastatud
+- [ ] Põhiline vastavuse jälgimine
+
+#### Aste 2
+- [ ] Vastavuse register
+- [ ] Regulaarne vastavuse kontroll
+- [ ] Vastavuse aruandlus
+
+#### Aste 3
+- [ ] Automaatne vastavuse monitooring
+- [ ] Vastavuse dashboard
+- [ ] Regulaarsed välisauditid
+
+### VAS.2 Siseaudit
+
+#### Aste 1
+- [ ] Siseauditi funktsioon on olemas
+- [ ] Aastaaudit
+
+#### Aste 2
+- [ ] Siseauditi plaan
+- [ ] Regulaarsed auditid
+- [ ] Leidude jälgimine
+
+#### Aste 3
+- [ ] Pidev sisekontroll
+- [ ] Riskipõhine audit
+- [ ] Automaatne kontroll
+
+### VAS.3 Välisaudit
+
+#### Aste 1
+- [ ] Välisaudit vajadusel
+
+#### Aste 2
+- [ ] Regulaarne välisaudit (min 1x aastas)
+- [ ] Sertifitseerimine
+
+#### Aste 3
+- [ ] Pidev välisaudit
+- [ ] Mitme standardi sertifitseerimine
+- [ ] Penetratsioonitestid
+
+### VAS.4 Dokumentatsioon
+
+#### Aste 1
+- [ ] Põhidokumentatsioon on olemas
+- [ ] Dokumentatsioon on kättesaadav
+
+#### Aste 2
+- [ ] Täielik dokumentatsioonisüsteem
+- [ ] Versioonihaldus
+- [ ] Regulaarne ülevaatus
+
+#### Aste 3
+- [ ] Dokumentatsiooni audit
+- [ ] Automaatne uuendamine
+- [ ] Dokumentatsiooni kvaliteedikontroll
+
+## Kokkuvõte
+
+Auditi lõpus koosta koondtabel:
+
+```markdown
+| Domeen | Vastab | Osaliselt | Ei vasta | Kokku | Vastavuse % |
+|--------|--------|-----------|----------|-------|-------------|
+| ORG    |        |           |          |       |             |
+| PER    |        |           |          |       |             |
+| FYY    |        |           |          |       |             |
+| VOR    |        |           |          |       |             |
+| SYS    |        |           |          |       |             |
+| RAK    |        |           |          |       |             |
+| AND    |        |           |          |       |             |
+| TOI    |        |           |          |       |             |
+| INT    |        |           |          |       |             |
+| VAS    |        |           |          |       |             |
+| **KOKKU** |     |           |          |       |             |
+```
+
+Üldine vastavuse hinnang:
+- **90-100%**: Täielik vastavus
+- **75-89%**: Oluline vastavus (väiksed lüngad)
+- **50-74%**: Osaline vastavus (olulised lüngad)
+- **<50%**: Mittevastavus (kriitilised lüngad)
