@@ -6,6 +6,9 @@ This folder contains a cleaned, modernized re-draw of the provided logo.
 
 - `eltsl_logo_v2.svg`: light variant (black text, blue+black mark)
 - `eltsl_logo_v2_dark.svg`: dark-background friendly variant (white text, blue+white mark)
+- Print-ready vector exports:
+  - `eltsl_logo_v2_print.pdf` / `eltsl_logo_v2_print.ps`
+  - `eltsl_logo_v2_dark_print.pdf` / `eltsl_logo_v2_dark_print.ps`
 - PNG exports:
   - `eltsl_logo_v2_{1024,512}.png` (transparent)
   - `eltsl_logo_v2_{1024,512}_white.png` (white background)
