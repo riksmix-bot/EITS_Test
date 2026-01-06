@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+  <defs>
+    <style>
+      .text { font-family: 'Arial', 'Helvetica', sans-serif; font-weight: bold; }
+    </style>
+    <!-- Path for text: Center 250,260, Radius 170 -->
+    <!-- Starts from angle ~210 degrees to ~330 degrees for the top text -->
+    <path id="textCurve" d="M 50,280 A 200,200 0 1,1 450,280" fill="none" />
+  </defs>
+
+  <!-- Background circle for reference (removed in final) -->
+  <!-- <circle cx="250" cy="250" r="240" fill="#f8f8f8" /> -->
+
+  <!-- Top Text -->
+  <text class="text" font-size="34" fill="#000" letter-spacing="1.5">
+    <textPath href="#textCurve" startOffset="50%" text-anchor="middle">
+      EESTI LOHE- JA TIIVASURFI LIIT
+    </textPath>
+  </text>
+
+  <!-- Central Emblem Group -->
+  <g transform="translate(250, 260)">
+    
+    <!-- Blue Shape (Left - Wind/Wave/Sail element) -->
+    <!-- Start top center, curve left and down, curve back up -->
+    <path d="M -10,-80 
+             C -90,-60 -120,60 -20,100
+             C -50,40 -30,-20 -10,-80 
+             Z" 
+          fill="#0055AA" />
+
+    <!-- Black Shape (Right - Wing/Kite element) -->
+    <!-- Start top center, curve right and down to a point, curve back left -->
+    <path d="M 10,-80 
+             C 80,-40 110,60 50,100
+             C 70,20 40,-40 10,-80 
+             Z" 
+          fill="#000000" />
+          
+    <!-- This creates a symmetric-ish look. The original was asymmetric. 
+         Let's try to match the asymmetry of the original provided image in my mind's eye 
+         (Blue rounded left, Black sharp right). 
+    -->
+    
+  </g>
+  
+  <!-- Trying a second version of the graphic within the same file (commented out) or just overwriting with better paths -->
+  
+  <g transform="translate(250, 260)">
+     <!-- Clear previous -->
+  </g>
+  
+  <g transform="translate(250, 260) scale(1.1)">
+     <!-- Blue Shape: Crescent moon on left -->
+     <!-- Outer arc: (-10, -90) to (-10, 90) via (-110, 0) -->
+     <!-- Inner arc: (-10, 90) to (-10, -90) via (-40, 0) -->
+     <path d="M -15,-90
+              A 95,95 0 0,0 -15,90
+              Q -50,0 -15,-90
+              Z"
+           fill="#0047AB" />
+
+     <!-- Black Shape: Fin on right -->
+     <!-- Top point (15, -90) -->
+     <!-- Bottom right point (80, 50) -->
+     <!-- Bottom left point (15, 90) -->
+     <!-- Curve from Top to Bottom Right -->
+     <!-- Curve from Bottom Right to Bottom Left -->
+     <!-- Curve from Bottom Left to Top -->
+     <path d="M 15,-80
+              Q 100,-20 80,90
+              Q 50,50 15,90
+              Q 40,0 15,-80
+              Z"
+           fill="black" />
+  </g>
+
+  <!-- Bottom Text -->
+  <text x="250" y="440" text-anchor="middle" class="text" font-size="48" letter-spacing="3" fill="black">
+    ELTSL
+  </text>
+</svg>

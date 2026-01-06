@@ -1,0 +1,16 @@
+JUHEND LOGO KASUTAMISEKS TRÜKIKOJAS
+
+See kaust sisaldab Eesti Lohe- ja Tiivasurfi Liidu logo vektorgraafika faili.
+
+FAIL: Eesti_Lohe_ja_Tiivasurfi_Liit_logo.svg
+
+INFO TRÜKIKOJALE:
+1. Formaat: SVG (Scalable Vector Graphics). See on standardne vektorformaat, mida saab avada ja töödelda enamikes kujundusprogrammides (Adobe Illustrator, CorelDRAW, Inkscape).
+2. Värvid:
+   - Sinine: #0047AB (RGB). Trükiks soovituslik vaste: Pantone 286 C või CMYK 100/75/0/0.
+   - Must: #000000 (RGB). Trükiks: 100% K (või Rich Black sõltuvalt vajadusest).
+3. Fondid: Fail kasutab standardseid fonte (Arial/Helvetica). Kui trükikoda vajab teksti kurvidena (outlines), saab nad selle oma programmis ühe klikiga teha.
+4. Skaleerimine: Faili võib suurendada suvalisse mõõtu ilma kvaliteedikadudeta.
+
+KASUTAMINE:
+Saatke fail "Eesti_Lohe_ja_Tiivasurfi_Liit_logo.svg" otse trükikotta.
