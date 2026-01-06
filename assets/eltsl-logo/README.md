@@ -1,0 +1,18 @@
+# ELTSL logo (v2)
+
+This folder contains a cleaned, modernized re-draw of the provided logo.
+
+## Files
+
+- `eltsl_logo_v2.svg`: light variant (black text, blue+black mark)
+- `eltsl_logo_v2_dark.svg`: dark-background friendly variant (white text, blue+white mark)
+- PNG exports:
+  - `eltsl_logo_v2_{1024,512}.png` (transparent)
+  - `eltsl_logo_v2_{1024,512}_white.png` (white background)
+  - `eltsl_logo_v2_dark_{1024,512}.png` (transparent)
+  - `eltsl_logo_v2_dark_{1024,512}_blackbg.png` (dark background preview)
+
+## Notes
+
+- The SVG uses text with `font-family="Montserrat, Inter, Arial, sans-serif"`.
+  - For print/vendor handoff, open in Illustrator/Inkscape/Figma and **outline/convert text to paths** to avoid font substitution.
