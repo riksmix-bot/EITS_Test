@@ -22,6 +22,7 @@ Cursor rules (`.mdc` files) that automatically apply coding standards, security 
 | :---- | :---- | :----------- |
 | **Java** | Spring Boot 4 + Java 21 | jOOQ, Flyway migrations, OpenAPI code generation, Gradle workflows |
 | **Nuxt** | Nuxt 4 + Vue 3 + TypeScript | Orval API client, i18n, Vitest testing, TanStack Query |
+| **EITS** | Security / Compliance | E-ITS compliance, process mapping, security class determination, audit logging |
 
 ### 💬 Commands (`commands/`)
 
@@ -57,6 +58,9 @@ cp agents/java/AGENTS.md your-project/AGENTS.md
 
 # For Nuxt projects
 cp agents/nuxt/AGENTS.md your-project/AGENTS.md
+
+# For EITS compliance
+cp agents/eits/AGENTS.md your-project/AGENTS.md
 ```
 
 ## How It Works
@@ -101,6 +105,8 @@ These configurations are starting points. Adapt them to your project:
 ```
 cursor-prompts/
 ├── agents/
+│   ├── eits/
+│   │   └── AGENTS.md          # EITS Audit agent configuration
 │   ├── java/
 │   │   └── AGENTS.md          # Spring Boot agent configuration
 │   └── nuxt/
