@@ -9,6 +9,9 @@ This folder contains a cleaned, modernized re-draw of the provided logo.
 - Print-ready vector exports:
   - `eltsl_logo_v2_print.pdf` / `eltsl_logo_v2_print.ps`
   - `eltsl_logo_v2_dark_print.pdf` / `eltsl_logo_v2_dark_print.ps`
+- Original (unmodified layout) print-ready files:
+  - `original/eltsl_logo_original_outlined.svg` (text converted to paths)
+  - `original/eltsl_logo_original_outlined_print.pdf` (recommended for print shops)
 - PNG exports:
   - `eltsl_logo_v2_{1024,512}.png` (transparent)
   - `eltsl_logo_v2_{1024,512}_white.png` (white background)
