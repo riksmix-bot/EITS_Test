@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1024" height="1024" viewBox="0 0 1024 1024" role="img" aria-label="EESTI LOHE- JA TIIVASURFI LIIT (ELTSL) logo (original layout, vector)">
+  <defs>
+    <!-- Top arc for the name -->
+    <path id="arc-top" d="M 96 560 A 416 416 0 0 1 928 560" />
+
+    <!-- Subtle highlight on the right (matches the original glossy feel) -->
+    <linearGradient id="rightGloss" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2A2F35"/>
+      <stop offset="45%" stop-color="#0B0D10"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Outer text (top) -->
+  <text
+    font-family="Impact, Anton, 'Arial Black', Arial, sans-serif"
+    font-weight="900"
+    font-size="78"
+    letter-spacing="4"
+    fill="#000000"
+  >
+    <!-- Use xlink:href for broad renderer compatibility (e.g. Inkscape export) -->
+    <textPath xlink:href="#arc-top" startOffset="50%" text-anchor="middle">
+      EESTI LOHE- JA TIIVASURFI LIIT
+    </textPath>
+  </text>
+
+  <!-- Center mark (original-style) -->
+  <g>
+    <!-- Left blue lobe -->
+    <path
+      d="M 512 246
+         C 386 246 282 350 282 476
+         C 282 606 374 710 512 710
+         C 468 662 444 594 444 476
+         C 444 360 468 292 512 246
+         Z"
+      fill="#0A57D5"
+    />
+
+    <!-- Right black lobe with gloss -->
+    <path
+      d="M 512 246
+         C 644 246 742 350 742 476
+         C 742 610 644 710 512 710
+         C 574 644 606 560 606 476
+         C 606 384 574 306 512 246
+         Z"
+      fill="url(#rightGloss)"
+    />
+
+    <!-- White inner cutout (teardrop) -->
+    <path
+      d="M 512 290
+         C 476 330 454 392 454 476
+         C 454 584 488 654 512 690
+         C 536 654 570 584 570 476
+         C 570 392 548 330 512 290
+         Z"
+      fill="#FFFFFF"
+    />
+
+    <!-- White swoosh on the right -->
+    <path
+      d="M 638 628
+         C 694 560 718 506 726 452"
+      fill="none"
+      stroke="#FFFFFF"
+      stroke-width="30"
+      stroke-linecap="round"
+    />
+  </g>
+
+  <!-- Bottom acronym -->
+  <text
+    x="512"
+    y="940"
+    text-anchor="middle"
+    font-family="Impact, Anton, 'Arial Black', Arial, sans-serif"
+    font-weight="900"
+    font-size="118"
+    letter-spacing="10"
+    fill="#000000"
+  >
+    ELTSL
+  </text>
+</svg>

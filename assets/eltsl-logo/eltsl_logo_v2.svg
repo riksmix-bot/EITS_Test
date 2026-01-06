@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024" role="img" aria-label="Eesti Lohe- ja Tiivasurfi Liit (ELTSL) logo">
+  <defs>
+    <!-- Text arc (top) -->
+    <path id="eltsl-arc-top" d="M 132 560 A 380 380 0 0 1 892 560" />
+  </defs>
+
+  <!-- Center mark -->
+  <g transform="translate(0,0)">
+    <!-- Left (kite) -->
+    <path
+      d="M 512 716
+         C 382 716 288 608 288 476
+         C 288 342 392 250 512 250
+         C 450 318 424 390 424 476
+         C 424 592 468 676 512 716
+         Z"
+      fill="#0B57D0"
+    />
+
+    <!-- Right (wing / sail) -->
+    <path
+      d="M 512 716
+         C 642 676 736 588 736 476
+         C 736 344 632 250 512 250
+         C 586 308 608 380 608 476
+         C 608 560 574 638 512 716
+         Z"
+      fill="#0B0D10"
+    />
+
+    <!-- Clean separation curve (white gap) -->
+    <path
+      d="M 512 708
+         C 474 680 456 624 456 560
+         C 456 478 488 410 512 392
+         C 536 410 568 478 568 560
+         C 568 624 550 680 512 708
+         Z"
+      fill="#FFFFFF"
+      opacity="0.98"
+    />
+
+    <!-- Inner swoosh -->
+    <path
+      d="M 548 676
+         C 636 616 690 538 704 452"
+      fill="none"
+      stroke="#FFFFFF"
+      stroke-width="22"
+      stroke-linecap="round"
+    />
+  </g>
+
+  <!-- Ring title (top arc) -->
+  <text
+    font-family="Montserrat, Inter, Arial, sans-serif"
+    font-weight="800"
+    font-size="72"
+    letter-spacing="3.5"
+    fill="#0B0D10"
+  >
+    <textPath href="#eltsl-arc-top" startOffset="50%" text-anchor="middle">
+      EESTI LOHE- JA TIIVASURFI LIIT
+    </textPath>
+  </text>
+
+  <!-- Acronym -->
+  <text
+    x="512"
+    y="950"
+    text-anchor="middle"
+    font-family="Montserrat, Inter, Arial, sans-serif"
+    font-weight="900"
+    font-size="96"
+    letter-spacing="6"
+    fill="#0B0D10"
+  >
+    ELTSL
+  </text>
+</svg>
