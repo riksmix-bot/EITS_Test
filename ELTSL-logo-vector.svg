@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" 
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     viewBox="0 0 500 500" 
+     width="500" 
+     height="500">
+  
+  <defs>
+    <path id="topArc" d="M 25,305 A 225,225 0 0,1 475,305" fill="none"/>
+  </defs>
+  
+  <!-- Ringikujuline tekst üleval -->
+  <text font-family="Impact, 'Arial Black', sans-serif" 
+        font-size="36" 
+        fill="#000000"
+        letter-spacing="2">
+    <textPath xlink:href="#topArc" startOffset="50%" text-anchor="middle">EESTI LOHE- JA TIIVASURFI LIIT</textPath>
+  </text>
+  
+  <!-- Sinine kujund (lohe) -->
+  <path d="M 162,112
+           Q 105,155 85,225
+           Q 68,295 105,365
+           Q 145,340 185,305
+           Q 225,270 260,240
+           Q 225,180 185,130
+           Q 172,118 162,112
+           Z" 
+        fill="#0057A4"/>
+  
+  <!-- Must kujund (tiib) - põhi -->
+  <path d="M 260,240
+           Q 305,220 355,215
+           Q 410,215 435,250
+           Q 450,290 425,340
+           Q 395,395 330,420
+           Q 270,440 220,430
+           Q 275,395 315,345
+           Q 345,295 310,265
+           Q 285,250 260,240
+           Z"
+        fill="#000000"/>
+  
+  <!-- Must kujund - esimene sisemine kurv -->
+  <path d="M 280,258
+           Q 305,290 320,340
+           Q 330,385 315,410
+           Q 290,405 270,395
+           Q 285,355 290,310
+           Q 290,280 280,258
+           Z"
+        fill="#1C1C1C"/>
+  
+  <!-- Must kujund - teine sisemine kurv -->
+  <path d="M 300,275
+           Q 320,310 330,355
+           Q 335,390 325,405
+           Q 310,400 295,392
+           Q 305,360 308,320
+           Q 308,295 300,275
+           Z"
+        fill="#282828"/>
+  
+  <!-- ELTSL tekst all -->
+  <text x="250" y="478" 
+        font-family="Impact, 'Arial Black', sans-serif"
+        font-size="60" 
+        fill="#000000" 
+        text-anchor="middle"
+        letter-spacing="5">ELTSL</text>
+  
+</svg>

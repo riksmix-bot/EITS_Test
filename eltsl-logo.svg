@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 520" width="500" height="520">
+  <defs>
+    <!-- Path for circular text at top -->
+    <path id="textArc" d="M 45,280 A 205,205 0 0,1 455,280" fill="none"/>
+  </defs>
+  
+  <!-- White background -->
+  <rect width="500" height="520" fill="white"/>
+  
+  <!-- Circular text - EESTI LOHE- JA TIIVASURFI LIIT -->
+  <text font-family="Impact, Arial Black, sans-serif" font-weight="900" font-size="34" fill="black" letter-spacing="2">
+    <textPath href="#textArc" startOffset="50%" text-anchor="middle">
+      EESTI LOHE- JA TIIVASURFI LIIT
+    </textPath>
+  </text>
+  
+  <!-- Blue kite/crescent shape -->
+  <path d="M 160,130 
+           C 100,170 70,240 90,320
+           C 110,360 140,380 175,385
+           C 200,340 235,295 280,260
+           C 250,220 210,170 160,130 Z" 
+        fill="#0059A3"/>
+  
+  <!-- Black wing shape - main triangular body -->
+  <path d="M 280,260
+           C 310,245 350,235 400,240
+           C 420,250 435,270 430,300
+           C 420,320 400,340 370,360
+           C 340,380 300,395 260,400
+           C 290,370 320,340 340,310
+           C 310,290 290,275 280,260 Z"
+        fill="black"/>
+  
+  <!-- Black wing - inner curved accent -->
+  <path d="M 295,275
+           C 315,295 335,325 345,360
+           C 330,365 310,370 290,372
+           C 300,340 305,305 295,275 Z"
+        fill="#1a1a1a"/>
+  
+  <!-- Second black wing layer for depth -->
+  <path d="M 260,400
+           C 300,395 340,380 375,355
+           C 400,335 420,310 425,285
+           L 430,300
+           C 425,330 405,355 375,375
+           C 345,395 305,410 260,415
+           Z"
+        fill="#0a0a0a"/>
+  
+  <!-- ELTSL text at bottom -->
+  <text x="250" y="485" 
+        font-family="Impact, Arial Black, sans-serif" 
+        font-weight="900" 
+        font-size="58" 
+        fill="black" 
+        text-anchor="middle"
+        letter-spacing="3">
+    ELTSL
+  </text>
+  
+</svg>
