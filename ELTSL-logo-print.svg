@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" 
+     viewBox="0 0 500 500" 
+     width="500" 
+     height="500"
+     version="1.1">
+  
+  <title>Eesti Lohe- ja Tiivasurfi Liit - ELTSL Logo</title>
+  
+  <defs>
+    <!-- Arc path for circular text -->
+    <path id="textArcPath" 
+          d="M 32,295 A 220,220 0 0,1 468,295" 
+          fill="none"/>
+  </defs>
+  
+  <!-- ==================== -->
+  <!-- CIRCULAR TEXT - TOP  -->
+  <!-- ==================== -->
+  <text font-family="Impact, 'Arial Black', sans-serif" 
+        font-size="36" 
+        fill="#000000"
+        letter-spacing="2">
+    <textPath href="#textArcPath" startOffset="50%" text-anchor="middle">
+      EESTI LOHE- JA TIIVASURFI LIIT
+    </textPath>
+  </text>
+  
+  <!-- ==================== -->
+  <!-- BLUE CRESCENT SHAPE  -->
+  <!-- (Kite element)       -->
+  <!-- ==================== -->
+  <path d="M 168,120
+           C 130,145 100,185 88,235
+           C 76,285 82,335 115,370
+           C 135,355 158,335 183,312
+           C 208,289 235,265 262,242
+           C 240,205 215,168 188,138
+           C 180,128 172,122 168,120
+           Z" 
+        fill="#0066B3"
+        stroke="none"/>
+  
+  <!-- ======================== -->
+  <!-- BLACK WING SHAPE - MAIN  -->
+  <!-- (Wing/sail element)      -->
+  <!-- ======================== -->
+  <path d="M 262,242
+           C 290,228 325,218 360,218
+           C 395,218 420,232 430,258
+           C 438,284 428,318 405,350
+           C 382,382 348,405 305,418
+           C 262,431 225,432 200,425
+           C 240,400 275,365 300,325
+           C 325,285 320,265 262,242
+           Z"
+        fill="#000000"
+        stroke="none"/>
+  
+  <!-- ========================== -->
+  <!-- BLACK WING - INNER CURVE   -->
+  <!-- (Depth detail)             -->
+  <!-- ========================== -->
+  <path d="M 285,260
+           C 300,280 312,308 318,340
+           C 322,372 318,398 305,410
+           C 285,405 268,398 255,390
+           C 270,365 282,335 288,302
+           C 292,280 290,268 285,260
+           Z"
+        fill="#1a1a1a"
+        stroke="none"/>
+  
+  <!-- ==================== -->
+  <!-- ELTSL TEXT - BOTTOM  -->
+  <!-- ==================== -->
+  <text x="250" y="475" 
+        font-family="Impact, 'Arial Black', sans-serif"
+        font-size="60" 
+        fill="#000000" 
+        text-anchor="middle"
+        letter-spacing="5"
+        font-weight="normal">
+    ELTSL
+  </text>
+  
+</svg>
